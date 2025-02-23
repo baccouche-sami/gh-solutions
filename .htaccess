@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^$ // [L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+DirectoryIndex / index.htm default.htm index.php index.php3 index.phtml index.php5 index.shtml mwindex.phtml
