@@ -1,5 +1,11 @@
 RewriteEngine On
+
+# Vérifie si le fichier demandé existe, sinon applique la règle
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^$ // [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirige vers la version HTML si elle existe
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
-DirectoryIndex / index.htm default.htm index.php index.php3 index.phtml index.php5 index.shtml mwindex.phtml
+
+# Définit les fichiers d'index prioritaires
+DirectoryIndex index.html index.htm default.htm index.php index.php3 index.phtml index.php5 index.shtml mwindex.phtml
